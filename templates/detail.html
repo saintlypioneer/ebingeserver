@@ -1,0 +1,410 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% static "app1/templateStatic/" as baseUrl %}
+{% block body %}
+      <!--  Modal -->
+      <div class="modal fade" id="productView" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="row align-items-stretch">
+                <div class="col-lg-6 p-lg-0"><a id="productViewImage" class="product-view d-block h-100 bg-cover bg-center" style="background: url(img/product-5.jpg)" href="{{baseUrl}}/img/product-5.jpg" data-lightbox="productview" title="Red digital smartwatch"></a>
+                </div>
+                <div class="col-lg-6">
+                  <button class="close p-4" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  <div class="p-5 my-md-4">
+                    <ul class="list-inline mb-2">
+                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                    </ul>
+                    <h2 class="h4" id="productViewName">Red digital smartwatch</h2>
+                    <p class="text-muted" id="productViewPrice">$250</p>
+                    <p class="text-small mb-4" id="productViewDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
+                    <!-- <div class="row align-items-stretch mb-4">
+                      <div class="col-sm-7 pr-sm-0">
+                        <div class="border d-flex align-items-center justify-content-between py-1 px-3"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+                          <div class="quantity">
+                            <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                            <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
+                            <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="cart">Add to cart</a></div>
+                    </div> -->
+                    <!-- <a class="btn btn-link text-dark p-0" href="#"><i class="far fa-heart mr-2"></i>Add to wish list</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="py-5">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-lg-6">
+              <!-- PRODUCT SLIDER-->
+              <div class="row m-sm-0">
+                <div class="col-sm-2 p-sm-0 order-2 order-sm-1 mt-2 mt-sm-0">
+                  <div class="owl-thumbs d-flex flex-row flex-sm-column" data-slider-id="1">
+                    <div class="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0"><img class="w-100" src="../{{product.image}}" alt="..."></div>
+                    <div class="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0"><img class="w-100" src="../{{product.image2}}" alt="..."></div>
+                    <div class="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0"><img class="w-100" src="../{{product.image3}}" alt="..."></div>
+                  </div>
+                </div>
+                <div class="col-sm-10 order-1 order-sm-2">
+                  <div class="owl-carousel product-slider" data-slider-id="1"><a class="d-block" href="../{{product.image}}" data-lightbox="product" title="Product item 1"><img class="img-fluid" src="../{{product.image}}" alt="..."></a><a class="d-block" href="../{{product.image2}}" data-lightbox="product" title="Product item 2"><img class="img-fluid" src="../{{product.image2}}" alt="..."></a><a class="d-block" href="../{{product.image3}}" data-lightbox="product" title="Product item 3"><img class="img-fluid" src="../{{product.image3}}" alt="..."></a></div>
+                </div>
+              </div>
+            </div>
+            <!-- PRODUCT DETAILS-->
+            <div class="col-lg-6">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+              </ul>
+              <h1>{{product.name}}</h1>
+              <p class="text-muted lead">₹{{product.selling_price}}</p>
+              <p class="text-small mb-4">{{product.description}}</p>
+              <div class="row align-items-stretch mb-4">
+                <!-- <div class="col-sm-5 pr-sm-0">
+                  <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+                    <div class="quantity">
+                      <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                      <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
+                      <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="#/" data-pk="{{product.uid}}" data-action="add" onclick="addtoCart(this)" id="productId" >Add to cart</a></div>
+              </div>
+              <!-- <a class="btn btn-link text-dark p-0 mb-4" href="#"><i class="far fa-heart mr-2"></i>Add to wish list</a><br> -->
+              <ul class="list-unstyled small d-inline-block">
+                <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span class="ml-2 text-muted">{{product.sku}}</span></li>
+                <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category:</strong><a class="reset-anchor ml-2" href="#">{{product.category}}</a></li>
+                <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Tags:</strong><a class="reset-anchor ml-2" href="#">{{product.tags}}</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- DETAILS TABS-->
+          <!-- <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a></li>
+            <li class="nav-item"><a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a></li>
+          </ul>
+          <div class="tab-content mb-5" id="myTabContent">
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <div class="p-4 p-lg-5 bg-white">
+                <h6 class="text-uppercase">Product description </h6>
+                <p class="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+              <div class="p-4 p-lg-5 bg-white">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="media mb-3"><img class="rounded-circle" src="{{baseUrl}}/img/customer-1.png" alt="" width="50">
+                      <div class="media-body ml-3">
+                        <h6 class="mb-0 text-uppercase">Jason Doe</h6>
+                        <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
+                        <ul class="list-inline mb-1 text-xs">
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+                        </ul>
+                        <p class="text-small mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                    <div class="media"><img class="rounded-circle" src="{{baseUrl}}/img/customer-2.png" alt="" width="50">
+                      <div class="media-body ml-3">
+                        <h6 class="mb-0 text-uppercase">Jason Doe</h6>
+                        <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
+                        <ul class="list-inline mb-1 text-xs">
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                          <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+                        </ul>
+                        <p class="text-small mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- RELATED PRODUCTS-->
+          <h2 class="h5 text-uppercase mb-4">Related products</h2>
+          <div class="row" id="relatedProducts">
+            <!-- PRODUCT-->
+            <!-- <div class="col-lg-3 col-sm-6">
+              <div class="product text-center skel-loader">
+                <div class="d-block mb-3 position-relative"><a class="d-block" href="detail"><img class="img-fluid w-100" src="{{baseUrl}}/img/product-1.jpg" alt="..."></a>
+                  <div class="product-overlay">
+                    <ul class="mb-0 list-inline">
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
+                      <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail">Kui Ye Chen’s AirPods</a></h6>
+                <p class="small text-muted">$250</p>
+              </div>
+            </div> -->
+            <!-- PRODUCT-->
+            <!-- <div class="col-lg-3 col-sm-6">
+              <div class="product text-center skel-loader">
+                <div class="d-block mb-3 position-relative"><a class="d-block" href="detail"><img class="img-fluid w-100" src="{{baseUrl}}/img/product-2.jpg" alt="..."></a>
+                  <div class="product-overlay">
+                    <ul class="mb-0 list-inline">
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
+                      <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail">Air Jordan 12 gym red</a></h6>
+                <p class="small text-muted">$300</p>
+              </div>
+            </div> -->
+            <!-- PRODUCT-->
+            <!-- <div class="col-lg-3 col-sm-6">
+              <div class="product text-center skel-loader">
+                <div class="d-block mb-3 position-relative"><a class="d-block" href="detail"><img class="img-fluid w-100" src="{{baseUrl}}/img/product-3.jpg" alt="..."></a>
+                  <div class="product-overlay">
+                    <ul class="mb-0 list-inline">
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
+                      <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail">Cyan cotton t-shirt</a></h6>
+                <p class="small text-muted">$25</p>
+              </div>
+            </div> -->
+            <!-- PRODUCT-->
+            <!-- <div class="col-lg-3 col-sm-6">
+              <div class="product text-center skel-loader">
+                <div class="d-block mb-3 position-relative"><a class="d-block" href="detail"><img class="img-fluid w-100" src="{{baseUrl}}/img/product-4.jpg" alt="..."></a>
+                  <div class="product-overlay">
+                    <ul class="mb-0 list-inline">
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
+                      <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail">Timex Unisex Originals</a></h6>
+                <p class="small text-muted">$351</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <footer class="bg-dark text-white">
+        <div class="container py-4">
+          <div class="row py-5">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <h6 class="text-uppercase mb-3">Customer services</h6>
+              <ul class="list-unstyled mb-0">
+                <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
+                <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
+                <li><a class="footer-link" href="#">Online Stores</a></li>
+                <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+              <h6 class="text-uppercase mb-3">Company</h6>
+              <ul class="list-unstyled mb-0">
+                <li><a class="footer-link" href="#">What We Do</a></li>
+                <li><a class="footer-link" href="#">Available Services</a></li>
+                <li><a class="footer-link" href="#">Latest Posts</a></li>
+                <li><a class="footer-link" href="#">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6 class="text-uppercase mb-3">Social media</h6>
+              <ul class="list-unstyled mb-0">
+                <li><a class="footer-link" href="#">Twitter</a></li>
+                <li><a class="footer-link" href="#">Instagram</a></li>
+                <li><a class="footer-link" href="#">Tumblr</a></li>
+                <li><a class="footer-link" href="#">Pinterest</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
+              </div>
+              <div class="col-lg-6 text-lg-right">
+                <p class="small text-muted mb-0">Copyright<a class="text-white reset-anchor" href="https://bootstraptemple.com/p/bootstrap-ecommerce">Ebinge.in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script type="text/javascript">
+        {% for message in messages %}
+          alert ("{{ message }}");
+        {% endfor %}
+      </script>
+      <script>
+        function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+          }
+          return cookieValue;
+        }
+        var products;
+        function relatedProducts(){
+          var category, sub_category;
+          category = "{{product.category}}";
+          sub_category = "{{product.sub_category}}";
+          fetch('../shop/products',{
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': getToken('csrftoken'),
+            },
+            body: JSON.stringify({'category': category, 'sub_category': sub_category})
+          })
+          .then((response)=>{
+            return response.json();
+          })
+          .then((data)=>{
+            products = JSON.parse(data);
+            console.log("Data:", JSON.parse(data));
+            document.getElementById("relatedProducts").innerHTML = '';
+            var cartPids = Object.keys(JSON.parse(localStorage.getItem('cart')));
+            for (var i=0;i<products["length"];i++){
+              var txt = "Add to Cart";
+              var action = "add";
+              if (cartPids.includes(products[i]["pk"])){
+                // value already exists
+                txt = "Remove from Cart";
+                action = "remove";
+              }
+              document.getElementById("relatedProducts").innerHTML += "<div class=\"col-lg-3 col-sm-6\"><div class=\"product text-center skel-loader\"><div class=\"d-block mb-3 position-relative\"><a class=\"d-block\" href=\"/detail/"+products[i]["pk"]+"\"><img class=\"img-fluid w-100\" src=\"/"+products[i]["fields"]["image"]+"\" alt=\"...\"></a><div class=\"product-overlay\"><ul class=\"mb-0 list-inline\"><li class=\"list-inline-item m-0 p-0\"><a class=\"btn btn-sm btn-outline-dark\" href=\"#\"><i class=\"far fa-heart\"></i></a></li><li class=\"list-inline-item m-0 p-0\"><a class=\"btn btn-sm btn-dark\" href=\"#/\" onclick=\"addtoCart(this)\" data-action=\""+action+"\" data-pk=\""+products[i]["pk"]+"\">"+txt+"</a></li><li class=\"list-inline-item mr-0\"><a class=\"btn btn-sm btn-outline-dark\" href=\"#productView\" data-toggle=\"modal\" onclick=\"productViewModal(this.dataset.uid)\" data-uid=\""+i+"\"><i class=\"fas fa-expand\"></i></a></li></ul></div></div><h6> <a class=\"reset-anchor\" href=\"/detail/"+products[i]["pk"]+"\">"+products[i]["fields"]["name"]+"</a></h6><p class=\"small text-muted\">₹"+products[i]["fields"]["selling_price"]+"</p></div></div>";
+
+            }
+          })
+        }
+        function productViewModal(e){
+          document.getElementById("productViewImage").style.background = "url(/"+products[parseInt(e)]["fields"]["image"]+")";
+          document.getElementById("productViewImage").href = "/"+products[parseInt(e)]["fields"]["image"];
+          document.getElementById("productViewDescription").innerHTML = products[parseInt(e)]["fields"]["description"];
+          document.getElementById("productViewName").innerHTML = products[parseInt(e)]["fields"]["name"];
+          document.getElementById("productViewPrice").innerHTML = "₹"+products[parseInt(e)]["fields"]["selling_price"];
+        }
+        function updateCartLength(){
+            document.getElementById("cartLength").innerHTML = "("+Object.keys(JSON.parse(localStorage.getItem('cart'))).length+")";
+          }
+          function onLoadItems(){
+            relatedProducts();
+            updateCartLength();
+            localAddtoCart();
+          }
+          function localAddtoCart(){
+            var cartKeys = Object.keys(JSON.parse(localStorage.getItem('cart')))
+            if (cartKeys.includes("{{product.uid}}")){
+              // Already Exists in Cart
+              document.getElementById("productId").dataset.action = 'remove';
+              document.getElementById("productId").innerHTML = 'Remove from Cart';
+            }
+          }
+          var cartJson;
+        function addtoCart(a){
+          var cartString = localStorage.getItem('cart');
+          if (cartString == null || cartString == undefined){
+            // empty cart
+            localStorage.setItem('cart', '{}');
+          }
+          cartJson = JSON.parse(cartString);
+          var keys = Object.keys(cartJson);
+          for (var k in keys){
+            if (keys[k] == a.dataset.pk){
+              if (a.dataset.action == 'update'){
+                cartJson[a.dataset.pk] = a.dataset.qty;
+              }
+              else if (a.dataset.action == 'remove' || a.dataset.action == 'add'){
+                delete cartJson[a.dataset.pk];
+              }
+            }
+          }
+          if (a.dataset.action == 'add'){
+            var pk = a.dataset.pk;
+            cartJson[pk]="1";
+          }
+          localStorage.setItem('cart', JSON.stringify(cartJson));
+          if (a.dataset.action == 'add'){
+            a.dataset.action = 'remove'
+            a.innerHTML = 'Remove from Cart'
+          }
+          else if (a.dataset.action == 'remove'){
+            a.dataset.action = 'add'
+            a.innerHTML = 'Add to Cart'
+          }
+          document.getElementById("cartLength").innerHTML = "("+Object.keys(cartJson).length+")";
+        }
+      </script>
+      <!-- JavaScript files-->
+      <script src="{{baseUrl}}/vendor/jquery/jquery.min.js"></script>
+      <script src="{{baseUrl}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="{{baseUrl}}/vendor/lightbox2/js/lightbox.min.js"></script>
+      <script src="{{baseUrl}}/vendor/nouislider/nouislider.min.js"></script>
+      <script src="{{baseUrl}}/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+      <script src="{{baseUrl}}/vendor/owl.carousel2/owl.carousel.min.js"></script>
+      <script src="{{baseUrl}}/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+      <script src="{{baseUrl}}/js/front.js"></script>
+      <script>
+        // ------------------------------------------------------- //
+        //   Inject SVG Sprite - 
+        //   see more here 
+        //   https://css-tricks.com/ajaxing-svg-sprite/
+        // ------------------------------------------------------ //
+        function injectSvgSprite(path) {
+        
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", path, true);
+            ajax.send();
+            ajax.onload = function(e) {
+            var div = document.createElement("div");
+            div.className = 'd-none';
+            div.innerHTML = ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);
+            }
+        }
+        // this is set to BootstrapTemple website as you cannot 
+        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+        // while using file:// protocol
+        // pls don't forget to change to your domain :)
+        injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+        
+      </script>
+      <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </div>
+  </body>
+</html>
+{% endblock %}

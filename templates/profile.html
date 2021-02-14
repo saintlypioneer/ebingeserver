@@ -1,0 +1,71 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% static "app1/templateStatic/" as baseUrl %}
+{% block body %}
+{% if user.is_authenticated %}
+
+
+<div style="margin-top: 3%;">
+    <center>
+        The development for this Page is still in progress...
+    </center>
+</div>
+<script type="text/javascript">
+  {% for message in messages %}
+    alert ("{{ message }}");
+  {% endfor %}
+</script>
+<script>
+  function updateCartLength(){
+      document.getElementById("cartLength").innerHTML = "("+Object.keys(JSON.parse(localStorage.getItem('cart'))).length+")";
+    }
+    function onLoadItems(){
+      updateCartLength();
+    }
+</script>
+<!-- JavaScript files-->
+<script src="{% static 'app1/templateStatic/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/lightbox2/js/lightbox.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/nouislider/nouislider.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/owl.carousel2/owl.carousel.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js' %}"></script>
+<script src="{% static 'app1/templateStatic/js/front.js' %}"></script>
+<script>
+  // ------------------------------------------------------- //
+  //   Inject SVG Sprite - 
+  //   see more here 
+  //   https://css-tricks.com/ajaxing-svg-sprite/
+  // ------------------------------------------------------ //
+  function injectSvgSprite(path) {
+  
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", path, true);
+      ajax.send();
+      ajax.onload = function(e) {
+      var div = document.createElement("div");
+      div.className = 'd-none';
+      div.innerHTML = ajax.responseText;
+      document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+  }
+  // this is set to BootstrapTemple website as you cannot 
+  // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+  // while using file:// protocol
+  // pls don't forget to change to your domain :)
+  injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+  
+</script>
+<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</div>
+</body>
+</html>
+{% else %}
+<script>
+    alert("Please Login first!");
+  </script>
+  <meta http-equiv="refresh" content="0; URL=/login" />
+{% endif %}
+{% endblock %}

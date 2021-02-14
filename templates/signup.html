@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H06KSHQ82C"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H06KSHQ82C');
+    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    :root {
+      --input-padding-x: 1.5rem;
+      --input-padding-y: 0.75rem;
+    }
+
+    .login,
+    .image {
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      background-image: url('https://cdn0.weddingwire.in/articles/images/5/3/8/4/img_74835/banarasi-saree-with-price-fabindia-crimson.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .login-heading {
+      font-weight: 300;
+    }
+
+    .btn-login {
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      padding: 0.75rem 1rem;
+      border-radius: 2rem;
+    }
+
+    .form-label-group {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .form-label-group>input,
+    .form-label-group>label {
+      padding: var(--input-padding-y) var(--input-padding-x);
+      height: auto;
+      border-radius: 2rem;
+    }
+
+    .form-label-group>label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      margin-bottom: 0;
+      /* Override default `<label>` margin */
+      line-height: 1.5;
+      color: #495057;
+      cursor: text;
+      /* Match the input under the label */
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      transition: all .1s ease-in-out;
+    }
+
+    .form-label-group input::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::-ms-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::-moz-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input:not(:placeholder-shown) {
+      padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+      padding-bottom: calc(var(--input-padding-y) / 3);
+    }
+
+    .form-label-group input:not(:placeholder-shown)~label {
+      padding-top: calc(var(--input-padding-y) / 3);
+      padding-bottom: calc(var(--input-padding-y) / 3);
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* Fallback for Edge
+-------------------------------------------------- */
+
+    @supports (-ms-ime-align: auto) {
+      .form-label-group>label {
+        display: none;
+      }
+
+      .form-label-group input::-ms-input-placeholder {
+        color: #777;
+      }
+    }
+
+    /* Fallback for IE
+-------------------------------------------------- */
+
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+      .form-label-group>label {
+        display: none;
+      }
+
+      .form-label-group input:-ms-input-placeholder {
+        color: #777;
+      }
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>SignUp</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4"> Enter the Following Details! </h3>
+                <div id="signUp" style="display:block;">
+                  <form action="signup" method="POST">
+                    {% csrf_token %}
+
+
+                    <div class="form-label-group">
+                      <input type="text" id="inputName" name="inputName" class="form-control" placeholder="First Name"
+                        required autofocus>
+                      <label for="inputName">First Name</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="text" id="inputName2" name="inputName2" class="form-control" placeholder="Last Name"
+                        required autofocus>
+                      <label for="inputName2">Last Name</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="email" id="inputEmail1" name="inputEmail1" class="form-control"
+                        placeholder="Email address" required>
+                      <label for="inputEmail1">Email address</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="tel" id="inputNumber" name="inputNumber" class="form-control"
+                        placeholder="Mobile Number" required>
+                      <label for="inputNumber">Mobile Number</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="password" id="inputPassword1" name="inputPassword1" class="form-control"
+                        placeholder="Password" required>
+                      <label for="inputPassword1">Password</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="password" id="inputPassword2" name="inputPassword2" class="form-control"
+                        placeholder="Confirm Password" required>
+                      <label for="inputPassword2">Confirm Password</label>
+                    </div>
+
+                    <!-- <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Remember password</label>
+                      </div> -->
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                      type="submit">Sign up</button>
+                    <div class="text-center">
+                      <!-- <button type="button" name="button" style="border:0px;background-color:white;" onclick="toggle('signin')">Sign-In</button> -->
+                      <a class="small" href="./login">Sign-In</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var errs = {};
+    {% for message in messages %}
+      alert ("{{ message }}");
+    {% endfor %}
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+</body>
+
+</html>
